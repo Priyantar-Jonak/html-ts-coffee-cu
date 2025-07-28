@@ -1,6 +1,6 @@
-export const contractAddress="0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512" as const;
 
-// anytime we need to interact with the smart contract we need the abi
+// ABI typed as `const` so tools like Viem can infer function names, parameters, return types, etc.
 export const abi = [
   {
     inputs: [{ internalType: "address", name: "priceFeed", type: "address" }],
@@ -15,13 +15,7 @@ export const abi = [
   {
     inputs: [],
     name: "MINIMUM_USD",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
@@ -40,53 +34,23 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "fundingAddress",
-        type: "address",
-      },
-    ],
+    inputs: [{ internalType: "address", name: "fundingAddress", type: "address" }],
     name: "getAddressToAmountFunded",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
-    ],
+    inputs: [{ internalType: "uint256", name: "index", type: "uint256" }],
     name: "getFunder",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "getOwner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
@@ -106,13 +70,7 @@ export const abi = [
   {
     inputs: [],
     name: "getVersion",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
@@ -123,4 +81,4 @@ export const abi = [
     stateMutability: "nonpayable",
     type: "function",
   },
-]
+] as const;
